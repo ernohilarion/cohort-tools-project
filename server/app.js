@@ -40,15 +40,15 @@ app.get("/docs", (req, res) => {
   res.sendFile(__dirname + "/views/docs.html");
 });
 
+// app.get("/api/cohorts", (req, res) => {
+//   res.json(cohortsData)
+// });
+
+// app.get("/api/students", (req, res) => {
+//   res.json(studentsData)
+// });
+
 app.get("/api/cohorts", (req, res) => {
-  res.json(cohortsData)
-});
-
-app.get("/api/students", (req, res) => {
-  res.json(studentsData)
-});
-
-app.get("/cohorts", (req, res) => {
 
   Cohort.find({})
     .then((cohorts) => {
@@ -61,7 +61,7 @@ app.get("/cohorts", (req, res) => {
     })
 })
 
-app.get("/students", (req, res) => {
+app.get("/api/students", (req, res) => {
 
   Student.find({})
     .then((students) => {
